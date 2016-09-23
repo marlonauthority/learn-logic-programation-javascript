@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body{background-color:#2196f3;
+    color: #000;
+    }
+    .codigo{
+      width: 350px;
+      padding: 20px;
+      border-radius: 3px;
+      margin: 0 auto;
+      margin-top: 60px;
+      background-color: #fff;
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+<div class="codigo">
+
+
+  <script>
+      function pulaLinha() {
+
+          document.write("<br>");
+      }
+
+      function mostra(frase) {
+
+          document.write(frase);
+          pulaLinha();
+      }
+
+      var loginCadastrado = "nome";
+      var senhaCadastrada = "123";
+
+      var maximoTentativas = 3;
+      var tentativaAtual = 1;
+
+      while(tentativaAtual <= maximoTentativas) {
+
+          var loginInformado = prompt("Informe seu login");
+          var senhaInformada = prompt("Informe sua senha");
+
+          if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+              mostra("Bem-vindo ao sistema, " + loginInformado);
+
+              break; // acertou, sai do loop while porque não faz sentido continuar perguntando
+
+          } else {
+
+              mostra("Login inválido. Tente novamente");
+          }
+
+          tentativaAtual++; // vai para a próxima tentativa
+
+      }
+
+  </script>
+</div>
+</html>

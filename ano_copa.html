@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body{
+      background-color:#2196f3;
+      color: #000;
+    }
+    .codigo{
+      width: 350px;
+      padding: 20px;
+      border-radius: 3px;
+      margin: 0 auto;
+      margin-top: 60px;
+      background-color: #fff;
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+<div class="codigo">
+
+  <script>
+        function pulaLinha() {
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+    var anoCopa = 1930;
+    var limiteAno = parseInt(prompt("Entre com um ano: "));
+    while(anoCopa <= limiteAno){
+      mostra("Teve copa em " + anoCopa);
+      anoCopa = anoCopa + 4;
+    }
+
+
+
+    </script>
+
+</div>
+</html>

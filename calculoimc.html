@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body{background-color:#2196f3;
+    color: #000;
+    }
+    .codigo{
+      width: 350px;
+      padding: 20px;
+      border-radius: 3px;
+      margin: 0 auto;
+      margin-top: 60px;
+      background-color: #fff;
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+<div class="codigo">
+
+  <script>
+        function pulaLinha() {
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function calculaImc(peso, altura){
+            return peso / (altura * altura);
+        }
+
+        var peso = prompt("Informe seu peso:");
+        var altura = prompt("Informe sua Altura, Exemplo 1.70:");
+        var imc = calculaImc(peso,altura);
+
+        mostra("O IMC calculado é " + imc.toFixed(2)); //arredonda 2 casas decimais
+
+        if(imc < 18.5){
+          mostra("Seu IMC é classificado como baixo peso.");
+        }
+        if (imc >= 18.5 && imc <= 24.9) {
+          mostra("Seu IMC é classificado como intervalo normal.")
+        }
+        if (imc <= 25 && imc >= 29.9 ){
+            mostra("Seu IMC é classificado como sobrepeso.")
+        }
+        if (imc <= 30 && imc >= 34.9){
+            mostra("Seu IMC é classificado como Obesidade Classe I.")
+        }
+        if (imc <= 35 && imc >= 39.9){
+            mostra("Seu IMC é classificado como Obesidade Classe II.")
+        }
+        if (imc > 40){
+            mostra("Seu IMC é classificado como Obesidade Classe III.")
+        }
+    </script>
+
+</div>
+</html>
