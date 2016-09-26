@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+  <script>
+
+  var tela = document.getElementById("tela");//pega o elemento para trabalhar com ele
+  var c = tela.getContext("2d"); //biblioteca javascript 2d para desenho
+  c.fillStyle = "gray";
+  c.fillRect (0,0,600,400);
+
+var atira = function(evento){ //atribui a variavel a funcao
+  var x  = evento.pageX - tela.offsetLeft; //pega o evento da posicao x e faz um calculo onde foi clicado e desconta a posicao da tela
+  var y  = evento.pageY - tela.offsetTop; //pega o evento da posicao y
+
+  c.fillStyle = "blue"; //define a cor
+  c.beginPath();//iinicia o caminhho
+  c.arc(x,y, 10, 0, 2*Math.PI); //cria um circulo
+  c.fill();//pinta ele
+  console.log("posicao do clique: " + x + ", " + y);//grava no quadro
+}
+
+tela.onclick = atira; // a cada click recebe a variavel
+  </script>
+
+  </body>
+</html>

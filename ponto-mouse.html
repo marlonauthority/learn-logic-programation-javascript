@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+  <script>
+
+  var tela = document.getElementById("tela");//pega o elemento para trabalhar com ele
+  var c = tela.getContext("2d"); //biblioteca javascript 2d para desenho
+
+  c.fillStyle = "gray"; // define a cor
+  c.fillRect(0,0,600,400);// define a posicao x,y e o tamanho
+
+  var atira = function(evento) { //cria a função
+      var x = evento.pageX - tela.offsetLeft; //evento.pageX devolve a posição do clique em relação a pagina, portanto precisamos fazer a conta da posição do clique na página e da posição absoluta do elemento.
+      var y = evento.pageY - tela.offsetTop;
+
+      c.fillStyle = "blue"; // define a cor
+      c.beginPath(); // inicia o caminho
+      c.arc(x, y, 10, 0, 2 * 3.14); // define a bolinha
+      c.fill();// pinta
+
+      console.log("posicao do clique: " + x + ", " + y); //cria os pontos na tela
+  }
+
+  tela.onclick = atira; // funcao que pega o click do mouse
+  </script>
+
+  </body>
+</html>

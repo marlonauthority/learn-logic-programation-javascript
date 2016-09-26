@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="tela" width="1024px" height="500px"></canvas>
+    <script>
+
+      var tela = document.getElementById("tela"); //pega o elemento para trabalhar com ele
+      var c = tela.getContext("2d"); //biblioteca javascript 2d para desenho
+
+      var circulo = function(x,y,raio){ //inicia a funcao passando 3 parametros
+        c.strokeStyle = "blue"; //cor azul
+        c.beginPath();// inicia o caminho
+        c.arc(x,y, raio, 0, 2*Math.PI); //passa os parametros
+        c.stroke();//pinta onde for receber os parametros
+      }
+
+      var limpTela = function(){
+        c.clearRect(0,0,600,400); // limpa todo o canvas
+      }
+
+
+      var imagem = new Image();
+imagem.src = "http://www.caelum.com.br/imagens/instrutores/fotos/paulo-silveira-90.jpg";
+
+var desenhaImagem = function(x, y) {
+    c.drawImage(imagem, x, y)
+};
+
+
+      var x = 1;
+      var desenha = function(){
+
+        circulo(x,100,x/2);
+        x = x + 1;
+      }
+
+      setInterval(desenha, 30); // a cada 30 segundos invoca a função
+
+</script>
+
+  </body>
+</html>

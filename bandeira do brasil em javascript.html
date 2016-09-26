@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+    <script>
+      var tela = document.getElementById("tela"); //pega o elemento para trabalhar com ele
+      var c = tela.getContext("2d"); //biblioteca javascript 2d para desenho
+      c.fillStyle = "green"; // define a cor verde
+      c.fillRect(0,0,600,400); // desenha um quadrado, posicao 0 e 0 com 2 de largura e 400 de altura
+
+
+
+      c.fillStyle = "yellow";
+      //para desenhar um triangulo deve-se passar um caminho de pontos
+      c.beginPath(); // inicia um caminho de pontos
+      c.moveTo(300,100); //move os pontos
+      c.lineTo(550,200); // desenha uma linha
+      c.lineTo(300,300); // desenha outra linha
+      c.fill (); // preencha as linha
+
+      c.fillStyle = "yellow";
+      //para desenhar um triangulo deve-se passar um caminho de pontos
+      c.beginPath(); // inicia um caminho de pontos
+      c.moveTo(300,100); //move os pontos
+      c.lineTo(50,200); // desenha uma linha
+      c.lineTo(300,300); // desenha outra linha
+      c.fill (); // preencha as linha
+
+
+      // desenhar um circulo
+      c.fillStyle = "blue";
+      c.beginPath();
+      c.arc(300,200,50,0,2*3.14); // recebe 5 parametros x, y, raio, angulo inicial e final
+      c.fill();
+
+
+    </script>
+  </body>
+</html>
